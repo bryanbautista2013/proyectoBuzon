@@ -1,0 +1,133 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/boostrap/3.3.4/css/boostrap.min.css">
+</head>
+
+<body>
+    <center>
+        @*<table class="table-bordered">
+
+            <tr>
+
+                <td>
+                    @Html.ActionLink("CLIENTE", "Index", "Cliente", null, new { @class = "btn btn-success btn-lg" })
+                </td>
+                <br>
+                <td>
+                    @Html.ActionLink("ADMINISTRADOR", "Index", "Admin", null, new { @class = "btn btn-danger btn-lg" })
+                </td>
+
+            </tr>
+
+
+        </table>*@
+        <BR>
+        <div class="container">
+            <br>
+            <div class="col-md-12">
+                <div id="carousel-1" class="carousel slide" data-ride="carousel">
+
+                    @*indicadores*@
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-1" data-slide-to="1"></li>
+                        <li data-target="#carousel-1" data-slide-to="2"></li>
+                    </ol>
+                    @*contenedor de slides*@
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="~/images/sugerencias.jpg" width="500" height="100" class="img-responsive">
+                            <div class="carousel-caption hidden-xs hidden-sm ">
+                                @*<h3>Este es nuestro slide #1</h3>*@
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="~/images/buzon.jpg" class="img-responsive">
+                            <div class="carousel-caption hidden-xs hidden-sm">
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="~/images/buzon1.jpg" width="700" height="100" class="img-responsive">
+                            <div class="carousel-caption hidden-xs hidden-sm">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    @*controles*@
+                    <a href="#carousel-1" class="left carousel-control" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+
+
+                    <a href="#carousel-1" class="right carousel-control" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        @*<br><br><br><br> <br><br><br>*@
+
+        <div class="container-fluid bg-3 text-center">    
+  <h3 class="margin">¿Que Hacer?</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Realiza tu queja o sugerencia</p>
+      <img src="~/images/B1.png" class="img-responsive margin" style="width:50%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <p>Envianos tu inquietud</p>
+      <img src="~/images/B2.png" class="img-responsive margin" style="width:50%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <p>Te responderemos de inmediato</p>
+      <img src="~/images/B3.jpg" class="img-responsive margin" style="width:50%" alt="Image">
+    </div>
+  </div>
+</div>
+
+        <div class="nav-footer-info-wrapper">
+            <div class="nav-footer-primaryinfo">
+
+                <small class="nav-footer-copyright">
+
+                    Copyright © 2018-2019 BuzonUTN Ecuador Cia. Ltda.
+
+                </small>
+
+
+
+                <nav class="nav-footer-navigation ">
+
+
+                    <a tabindex="1022" href="">Términos y condiciones</a>
+
+
+                    <a tabindex="1023" href="">Políticas de privacidad</a>
+
+
+                    <a tabindex="1024" href="">Ayuda</a>
+
+
+
+                </nav>
+            </div>
+        </div>
+    </center>
+
+
+</body>
+</html>
+
+
+

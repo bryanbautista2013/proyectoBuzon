@@ -1,0 +1,91 @@
+﻿@model IEnumerable<proyectoBuzon.Models.Quejas>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_Cliente.cshtml";
+}
+
+@*<h2>Index</h2>*@
+<h2> </h2>
+
+@*<p>
+        <a asp-action="Create">Realizar nueva Queja</a>
+    </p>*@
+
+
+<center>
+    <h2>QUEJAS PENDIENTES</h2>
+</center>
+@*<td>
+    @Html.ActionLink("MENU PRINCIPAL", "", "Cliente", null, new { @class = "btn btn-success" })
+</td>*@
+<td>
+    @Html.ActionLink("<< ATRAS", "Create", "Quejas", null, new { @class = "btn btn-success " })
+</td>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                FECHA
+            </th>
+            <th>
+                CLIENTE
+            </th>
+            <th>
+                ESTADO
+            </th>
+            <th>
+                PEDIDO
+            </th>
+            <th>
+                TIPO DE QUEJA
+            </th>
+            <th>
+                POLÍTICA
+            </th>
+            <th>
+                DESCRIPCIÓN
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaQ)
+
+                </td>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.IdClNavigation.NombresCl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdEstadoNavigation.NomEstado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdPedidoNavigation.IdPedido)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdTipoqNavigation.NombreTipoq)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdPoliticaNavigation.NomPolitica)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescripcionQ)
+                </td>
+                <td></td>
+                <td>
+                    <a class="btn btn-info"asp-action="Edit" asp-route-id="@item.IdQ">Editar</a>
+                    @*<a asp-action="Details" asp-route-id="@item.IdQ">Details</a> |*@
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdQ">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,85 @@
+﻿@model IEnumerable<proyectoBuzon.Models.Estado>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_AdminIndex.cshtml";
+}
+<link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/boostrap/3.3.1/css/boostrap.min.css">
+
+
+
+    
+        <div class="container">
+            <div class="table-responsive">
+                <h2>Listado Quejas</h2>
+                @*<p>
+            <a asp-action="Create">Create New</a>
+        </p>*@
+                <table class="table">
+                    @*<thead>
+                <tr class="danger">
+                    <th>
+                        @Html.DisplayNameFor(model => model.IdEstado)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NomEstado)
+                    </th>
+                    <th>OPCIONES</th>
+                </tr>
+            </thead>*@
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                @*<td>
+                            @Html.DisplayFor(modelItem => item.IdEstado)
+                        </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NomEstado)
+                                </td>
+                                <td>
+                                    @*<a class="btn btn-success" asp-action="Edit" asp-route-id="@item.IdEstado">Edit</a> |
+                            <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.IdEstado">Details</a> |
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdEstado">Delete</a>|*@
+                                    <a class="btn btn-info" asp-action="listarEstado" asp-controller="Resolver" asp-route-id="@item.IdEstado">LISTAR ESTADO</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+
+    
+
+
+@*<table class="table-bordered">
+
+        <tr>
+
+            <td>
+                @Html.ActionLink("PENDIENTE","listarEstado/1", "Resolver", null, new { @class = "btn btn-success btn-lg" })
+            </td>
+
+            <td>
+                @Html.ActionLink("SOLUCIONADO", "listarEstado/2", "Resolver", null, new { @class = "btn btn-danger btn-lg" })
+            </td>
+
+        </tr>
+
+
+    </table>*@
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,68 @@
+﻿@model proyectoBuzon.Models.EmailFormModel
+
+@{
+    ViewData["Title"] = "Responder";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+@{
+    ViewBag.Title = "Responder";
+}
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h4>Su respuesta por E-mail</h4>
+    <hr />
+
+
+
+
+    @*<input name="Correo" class="form-control" value="@ViewBag.Correo" />*@
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.Destinatario, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @*htmlAttributes: new { @Value = "" }*@
+            @ViewBag.Correo
+            @Html.TextBoxFor(m => m.Destinatario, new { @class = "form-control" })
+            @*<input type="text" name="Destinatario" class="form-control" value="@ViewBag.Correo" />*@
+            @Html.ValidationMessageFor(m => m.Destinatario)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Asunto, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Asunto, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Asunto)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Mensaje, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(m => m.Mensaje, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Mensaje)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Enviar" />
+        </div>
+    </div>
+    <div>
+        <a asp-controller="Resolver" asp-action="ListarEstado/2">REGRESAR</a>
+    </div>
+}
+
+@*<address>
+        One Microsoft Way<br />
+        Redmond, WA 98052-6399<br />
+        <abbr title="Phone">P:</abbr>
+        425.555.0100
+    </address>
+
+    <address>
+        <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>*@

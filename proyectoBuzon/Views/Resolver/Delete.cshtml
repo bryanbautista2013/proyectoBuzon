@@ -1,0 +1,64 @@
+﻿@model proyectoBuzon.Models.Quejas
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout_AdminIndex.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Quejas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DescripcionQ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DescripcionQ)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaQ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaQ)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdClNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdClNavigation.ApellidosCl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdEstadoNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdEstadoNavigation.NomEstado)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPedidoNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdPedidoNavigation.IdPedido)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPoliticaNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdPoliticaNavigation.NomPolitica)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTipoqNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdTipoqNavigation.NombreTipoq)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdQ" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

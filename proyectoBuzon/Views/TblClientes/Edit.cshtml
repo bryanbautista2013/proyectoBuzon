@@ -1,0 +1,60 @@
+﻿@model proyectoBuzon.Models.TblCliente
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout_AdminIndex.cshtml";
+}
+
+
+
+<h2>Datos Personales</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdCl" />
+            <div class="form-group">
+                <label asp-for="CedulaCl" class="control-label">Cedula</label>
+                <input asp-for="CedulaCl" class="form-control" />
+                <span asp-validation-for="CedulaCl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombresCl" class="control-label">Nombre</label>
+                <input asp-for="NombresCl" class="form-control" />
+                <span asp-validation-for="NombresCl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApellidosCl" class="control-label">Apellido</label>
+                <input asp-for="ApellidosCl" class="form-control" />
+                <span asp-validation-for="ApellidosCl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaNacimientoCl" class="control-label">Fecha de Nacimiento</label>
+                <input asp-for="FechaNacimientoCl" class="form-control" />
+                <span asp-validation-for="FechaNacimientoCl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelefonoCl" class="control-label">Teléfono</label>
+                <input asp-for="TelefonoCl" class="form-control" />
+                <span asp-validation-for="TelefonoCl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CorreoCl" class="control-label">Correo</label>
+                <input asp-for="CorreoCl" class="form-control" />
+                <span asp-validation-for="CorreoCl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

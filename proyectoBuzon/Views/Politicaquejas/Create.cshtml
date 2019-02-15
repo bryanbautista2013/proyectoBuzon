@@ -1,0 +1,37 @@
+﻿@model proyectoBuzon.Models.Politicaquejas
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout_AdminIndex.cshtml";
+}
+
+<h2>Create</h2>
+
+<h4>Politicaquejas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdTipoq" class="control-label"></label>
+                <select asp-for="IdTipoq" class ="form-control" asp-items="ViewBag.IdTipoq"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdPolitica" class="control-label"></label>
+                <select asp-for="IdPolitica" class ="form-control" asp-items="ViewBag.IdPolitica"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-warning" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-info" asp-action="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

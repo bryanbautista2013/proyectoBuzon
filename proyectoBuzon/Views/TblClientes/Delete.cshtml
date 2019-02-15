@@ -1,0 +1,57 @@
+﻿@model proyectoBuzon.Models.TblCliente
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout_AdminIndex.cshtml";
+}
+
+
+<h3>Esta seguro que desea borrar?</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CedulaCl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CedulaCl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NombresCl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NombresCl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidosCl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApellidosCl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimientoCl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimientoCl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoCl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoCl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CorreoCl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CorreoCl)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdCl" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,60 @@
+﻿@model proyectoBuzon.Models.Quejas
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Quejas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DescripcionQ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DescripcionQ)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaQ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaQ)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdClNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdClNavigation.ApellidosCl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdEstadoNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdEstadoNavigation.NomEstado)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPedidoNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdPedidoNavigation.IdPedido)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPoliticaNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdPoliticaNavigation.NomPolitica)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTipoqNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdTipoqNavigation.NombreTipoq)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdQ">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

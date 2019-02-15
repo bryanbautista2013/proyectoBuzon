@@ -1,0 +1,69 @@
+﻿@model proyectoBuzon.Models.Quejas
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout_Cliente.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="~/Estilos/Descripcion.css">
+<center>
+    <h2>EDITAR QUEJA</h2>
+
+
+    <hr>
+    <div>
+        <a class="btn btn-info" asp-action="IndexPendientes">REGRESAR</a>
+    </div>
+</center>
+<div class="col-md-4"></div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdQ" />
+            <div class="form-group">
+                <label asp-for="IdCl" class="control-label">Nombre</label>
+                <select asp-for="IdCl" class="form-control" asp-items="ViewBag.IdCl"></select>
+                <span asp-validation-for="IdCl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdTipoq" class="control-label">Tipo de Queja</label>
+                <select asp-for="IdTipoq" class="form-control" asp-items="ViewBag.IdTipoq"></select>
+                <span asp-validation-for="IdTipoq" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdPolitica" class="control-label">Politica</label>
+                <select asp-for="IdPolitica" class="form-control" asp-items="ViewBag.IdPolitica"></select>
+                <span asp-validation-for="IdPolitica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdPedido" class="control-label">Pedido</label>
+                <select asp-for="IdPedido" class="form-control" asp-items="ViewBag.IdPedido"></select>
+                <span asp-validation-for="IdPedido" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden="hidden">
+                <label asp-for="IdEstado" class="control-label">Estado</label>
+                <select asp-for="IdEstado" class="form-control" asp-items="ViewBag.IdEstado"></select>
+                <span asp-validation-for="IdEstado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescripcionQ" class="control-label">Descripcion</label>
+                <input asp-for="DescripcionQ" class="form-control" />
+                <span asp-validation-for="DescripcionQ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaQ" class="control-label">Fecha</label>
+                <input asp-for="FechaQ" readonly="readonly" class="form-control" />
+                <span asp-validation-for="FechaQ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

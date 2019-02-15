@@ -1,0 +1,76 @@
+﻿@model IEnumerable<proyectoBuzon.Models.Quejas>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_Cliente.cshtml";
+}
+<CENTER>
+    <h2>LISTAR QUEJAS</h2>
+</CENTER>
+<p>
+    @*<a class="btn btn-info" asp-action="Create">Crear Nuevo</a>*@
+    <a class="btn btn-success" asp-controller="Tipoquejas" asp-action="Index">Tipo de Queja</a>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionQ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaQ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdClNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEstadoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPedidoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPoliticaNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTipoqNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescripcionQ)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaQ)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdClNavigation.NombresCl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdEstadoNavigation.NomEstado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdPedidoNavigation.IdPedido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdPoliticaNavigation.NomPolitica)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdTipoqNavigation.NombreTipoq)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdQ">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdQ">Detalle</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdQ">Elminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

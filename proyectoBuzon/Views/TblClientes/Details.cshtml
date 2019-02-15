@@ -1,0 +1,55 @@
+﻿@model proyectoBuzon.Models.TblCliente
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout_AdminIndex.cshtml";
+}
+
+
+
+<div>
+    <h4>Datos Personales</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CedulaCl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CedulaCl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NombresCl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NombresCl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidosCl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApellidosCl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimientoCl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimientoCl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoCl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoCl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CorreoCl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CorreoCl)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdCl">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

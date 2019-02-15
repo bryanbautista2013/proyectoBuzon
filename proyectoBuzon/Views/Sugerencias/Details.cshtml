@@ -1,0 +1,43 @@
+﻿@model proyectoBuzon.Models.Sugerencias
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout_Cliente.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sugerencias</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DescripcionS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DescripcionS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdClNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdClNavigation.ApellidosCl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTiposugNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdTiposugNavigation.NombreTipoq)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdS">Editar</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

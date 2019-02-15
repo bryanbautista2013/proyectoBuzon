@@ -1,0 +1,50 @@
+﻿@model IEnumerable<proyectoBuzon.Models.Tipoqueja>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/boostrap/3.3.1/css/boostrap.min.css">
+
+
+<center>
+    <h2>Tipo de Quejas</h2>
+</center>
+
+<div class="container">
+    <p>
+        <a class="btn btn-success" asp-action="Create">Crear Nuevo</a>
+    </p>
+
+    <div class="table-responsive">
+
+        <table class="table table-striped table-bordered table-hover ">
+            <thead>
+
+                <tr class="success">
+                    <th>
+                        @Html.DisplayNameFor(model => model.NombreTipoq)
+                    </th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NombreTipoq)
+                        </td>
+                        <td>
+                            <a  class="btn btn-info btn-sm"asp-action="Edit" asp-route-id="@item.IdTipoq">Edit</a> |
+                            <a class="btn btn-success btn-sm" asp-action="Details" asp-route-id="@item.IdTipoq">Details</a> |
+                            <a class="btn btn-warning btn-sm" asp-action="Delete" asp-route-id="@item.IdTipoq">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

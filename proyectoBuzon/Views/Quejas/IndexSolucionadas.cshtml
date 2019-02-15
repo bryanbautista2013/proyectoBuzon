@@ -1,0 +1,97 @@
+﻿@model IEnumerable<proyectoBuzon.Models.Quejas>
+
+@{
+    ViewData["Title"] = "QUEJAS";
+    Layout = "~/Views/Shared/_Layout_Cliente.cshtml";
+    //   Layout = "~/Views/Shared/_Layout_Cliente.cshtml";
+
+}
+<CENTER>
+    <h2>QUEJAS REVISADAS</h2>
+</CENTER>
+@*<p>
+        <a asp-action="Create">Create New</a>
+
+    </p>*@
+@*<td>
+        @Html.ActionLink("MENU PRINCIPAL","", "Cliente", null, new { @class = "btn btn-success btn-lg" })
+    </td>*@
+
+<link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/boostrap/3.3.1/css/boostrap.min.css">
+
+<div class="container">
+    <div class="table-responsive">
+        
+            @Html.ActionLink("<< ATRAS", "Create", "Quejas", null, new { @class = "btn btn-success " })
+        
+        <table class="table table-striped table-bordered table-hover ">
+            <thead>
+                <tr class="info">
+                    <th>
+                        PEDIDO
+                    </th>
+
+                    <th>
+                        CLIENTE
+                    </th>
+                    <th>
+                        ESTADO
+                    </th>
+
+                    <th>
+                        TIPO DE QUEJA
+                    </th>
+                    <th>
+                        POLÍTICA
+                    </th>
+                    <th>
+                        DESCRIPCIÓN
+                    </th>
+                    <th>
+                        FECHA
+                    </th>
+                    <th>OPCIÓN</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdPedidoNavigation.IdPedido)
+                        </td>
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.IdClNavigation.NombresCl)
+                        </td>
+
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdEstadoNavigation.NomEstado)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdTipoqNavigation.NombreTipoq)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdPoliticaNavigation.NomPolitica)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DescripcionQ)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaQ)
+
+                        </td>
+                        <td> <a CLASS="btn btn-warning btn-sm" asp-action="IndexRespuesta" asp-route-id="@item.IdQ">Respuestas</a></td>
+                        @*<td>
+                           
+                            @*<a asp-action="Details" asp-route-id="@item.IdQ">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.IdQ">Delete</a>*@
+                        @*</td>*@*
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

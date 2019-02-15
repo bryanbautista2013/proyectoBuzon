@@ -1,0 +1,40 @@
+﻿@model proyectoBuzon.Models.Respuestasqueja
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>RESPUESTA</h2>
+
+<h4>Respuestas Queja</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+            <label asp-for="IdQ" class="control-label"></label>
+            <input asp-for="IdQ" class ="form-control" asp-items="ViewBag.IdQ">
+        </div>*@
+            <label asp-for="IdQ" class="control-label">N.Queja </label>
+            <input name="IdQ" class="form-control" readonly="readonly" value="@ViewBag.IdQ" />
+            <div class="form-group">
+                <label asp-for="DescResp" class="control-label">Escriba su respuesta</label>
+                <input asp-for="DescResp" class="form-control" />
+                <span asp-validation-for="DescResp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-info btn-sm" type="submit" value="RESPONDER"  />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-warning btn-sm" asp-controller="Resolver" asp-action="ListarEstado/2"><==REGRESAR</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
